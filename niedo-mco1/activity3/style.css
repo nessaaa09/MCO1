@@ -1,0 +1,16 @@
+/* style.css — Activity 3 External Stylesheet */
+
+body {
+  background-color: lightyellow;
+  font-family: Arial;
+  text-align: center;
+}
+
+.section {
+  color: pink;
+}
+
+.text {
+  color: black;
+  font-size: 16px;
+}

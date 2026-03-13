@@ -1,0 +1,43 @@
+/* style.css — Activity 4 External Stylesheet */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f6f9;
+  margin: 0;
+  padding: 40px;
+}
+
+.Employee {
+  width: 90%;
+  max-width: 1000px;
+  margin: auto;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.Employee thead {
+  background-color: #157ca5;
+  color: white;
+}
+
+.Employee th {
+  padding: 12px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.Employee td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  font-size: 13px;
+}
+
+.Employee tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+@media (max-width: 768px) {
+  .Employee { font-size: 12px; }
+  .Employee th, .Employee td { padding: 8px; }
+}
