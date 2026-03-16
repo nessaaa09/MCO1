@@ -1,17 +1,223 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Activity 6 — Coming Soon</title>
-</head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tiptop Portraiture Studio Reservation</title>
 
+<style>
+html, body {
+    width: 100%;
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    background: linear-gradient(135deg, #ffb3b3, #ffd6d6);
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    gap: 20px;
+}
+
+.formCard {
+    border: 1px solid #e89a9a;
+    background-color: #ffe5e5;
+    padding: 40px;
+    grid-column: span 6;
+    border-radius: 8px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.dataContent {
+    border: 1px solid #e89a9a;
+    padding: 20px;
+    grid-column: span 3;
+    background: linear-gradient(to bottom, #fff0f0, #ffc9c9);
+    border-radius: 8px;
+    text-align: left;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+}
+
+.formGroup label {
+    color: #7a2e2e;
+    font-weight: bold;
+}
+
+.formGroup input,
+.formGroup textarea {
+    border: 1px solid #f2a7a7;
+    border-radius: 5px;
+    padding: 7px;
+    margin-top: 3px;
+    transition: 0.2s;
+    background-color: #fffafa;
+}
+
+.formGroup input[type="date"] {
+    border: 1px solid #f2a7a7;
+    border-radius: 5px;
+    padding: 7px;
+    margin-top: 3px;
+    background-color: #fff5f5;
+    cursor: pointer;
+}
+
+.formGroup input[type="date"]:hover {
+    border-color: #ff8a8a;
+}
+
+.formGroup input[type="date"]:focus {
+    outline: none;
+    border-color: #ff8a8a;
+    box-shadow: 0 0 5px #ffb3b3;
+}
+
+.btn {
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 8px;
+    cursor: pointer;
+    background-color: #ffb3b3;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: #ff8a8a;
+    color: white;
+    transform: scale(1.05);
+}
+
+.titleContent {
+    margin-bottom: 10px;
+    color: #7a1f1f;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.formGroup select {
+    border: 1px solid #f2a7a7;
+    border-radius: 5px;
+    padding: 7px;
+    margin-top: 3px;
+}
+</style>
+
+</head>
 <body>
 
-  <h1>Activity 6</h1>
-  <p>This activity has not been submitted yet.</p>
+<main class="container">
+
+  <section class="formCard">
+    <form>
+
+      <h2>Tiptop Portraiture Studio Reservation</h2>
+
+      <figure class="formGroup">
+        <label>Full Name:</label>
+        <input type="text" id="name" placeholder="Enter your full name">
+      </figure>
+
+      <figure class="formGroup">
+        <label>Email Address:</label>
+        <input type="email" id="email" placeholder="Enter your email">
+      </figure>
+
+      <figure class="formGroup">
+        <label>Contact Number:</label>
+        <input type="tel" id="contact" placeholder="Enter your contact number">
+      </figure>
+
+      <figure class="formGroup">
+        <label>Reservation Date:</label>
+        <input type="date" id="date">
+      </figure>
+
+      <figure class="formGroup">
+        <label>Portrait Service Type:</label>
+        <select id="service">
+          <option value="">Select a portrait service</option>
+          <option value="Graduation Portrait">Graduation Portrait</option>
+          <option value="Family Portrait">Family Portrait</option>
+          <option value="Solo Portrait">Solo Portrait</option>
+          <option value="Couple Portrait">Couple Portrait</option>
+          <option value="Corporate Portrait">Corporate Portrait</option>
+          <option value="Creative Portrait">Creative Portrait</option>
+        </select>
+      </figure>
+
+      <figure class="formGroup">
+        <label>Additional Notes:</label>
+        <textarea rows="2" id="notes" placeholder="Any special request"></textarea>
+      </figure>
+
+      <button type="submit" class="btn">Reserve</button>
+
+    </form>
+  </section>
+
+  <section class="dataContent"></section>
+
+</main>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    console.log("JavaScript Loaded!");
+
+    const formSubmit = document.querySelector("form");
+    const dataContent = document.querySelector(".dataContent");
+
+    const name    = document.getElementById("name");
+    const email   = document.getElementById("email");
+    const contact = document.getElementById("contact");
+    const date    = document.getElementById("date");
+    const service = document.getElementById("service");
+    const notes   = document.getElementById("notes");
+
+    formSubmit.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        dataContent.innerHTML = `
+            <h1 class="titleContent">Tiptop Portraiture Studio</h1>
+            <p><b>Client Name:</b> ${name.value}</p>
+            <p><b>Email:</b> ${email.value}</p>
+            <p><b>Contact Number:</b> ${contact.value}</p>
+            <p><b>Reservation Date:</b> ${date.value}</p>
+            <p><b>Portrait Service:</b> ${service.value}</p>
+            <p><b>Notes:</b> ${notes.value}</p>
+        `;
+
+        name.value    = "";
+        email.value   = "";
+        contact.value = "";
+        date.value    = "";
+        service.value = "";
+        notes.value   = "";
+    });
+});
+</script>
 
 </body>
-
 </html>

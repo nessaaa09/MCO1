@@ -428,34 +428,397 @@
       </div>
 
       <!-- ── ACT 5 ── -->
-      <div class="activity-item" id="act5">
-        <div class="activity-header" onclick="toggleAct('act5')">
-          <div class="activity-header-left">
-            <span class="act-number">// ACT — 005</span>
-            <span class="act-title">Activity 5</span>
-            <span class="act-tag act-tag--soon">Coming Soon</span>
-          </div>
-          <span class="act-toggle">+</span>
-        </div>
-        <div class="activity-body">
-          <div class="blank-body">⏳ &nbsp; Activity not yet submitted</div>
-        </div>
+<div class="activity-item" id="act5">
+  <div class="activity-header" onclick="toggleAct('act5')">
+    <div class="activity-header-left">
+      <span class="act-number">// ACT — 005</span>
+      <span class="act-title">My Portfolio — Full HTML/CSS Page</span>
+      <span class="act-tag">HTML + CSS</span>
+    </div>
+    <span class="act-toggle">+</span>
+  </div>
+  <div class="activity-body">
+    <p class="activity-desc">
+      A complete personal portfolio webpage featuring a navigation bar, hero landing section,
+      about section, projects grid, contact form, and footer — all styled with internal CSS.
+    </p>
+
+    <div class="tab-bar">
+      <button class="tab active" onclick="showTab(event,'act5','preview')">▶ Live Preview</button>
+      <button class="tab" onclick="showTab(event,'act5','code')">⟨/⟩ index.html</button>
+    </div>
+
+    <div class="tab-panel active" data-act="act5" data-panel="preview">
+      <div class="browser-chrome">
+        <div class="browser-dots"><span></span><span></span><span></span></div>
+        <div class="browser-url">activity5/index.html</div>
+        <a class="browser-open" href="activity5/index.html" target="_blank">↗ Open</a>
       </div>
+      <iframe class="live-frame" src="activity5/index.html"></iframe>
+    </div>
+
+    <div class="tab-panel" data-act="act5" data-panel="code">
+      <div class="code-file-label">📄 activity5 / index.html</div>
+      <div class="code-block"><pre><span class="t">&lt;!doctype html&gt;</span>
+<span class="t">&lt;html</span> <span class="a">lang</span>=<span class="v">"en"</span><span class="t">&gt;</span>
+<span class="t">&lt;head&gt;</span>
+  <span class="t">&lt;meta</span> <span class="a">charset</span>=<span class="v">"UTF-8"</span> <span class="t">/&gt;</span>
+  <span class="t">&lt;meta</span> <span class="a">name</span>=<span class="v">"viewport"</span> <span class="a">content</span>=<span class="v">"width=device-width, initial-scale=1.0"</span> <span class="t">/&gt;</span>
+  <span class="t">&lt;title&gt;</span>My Portfolio<span class="t">&lt;/title&gt;</span>
+
+  <span class="t">&lt;style&gt;</span>
+    <span class="p">body</span> {
+      <span class="p">font-family</span>: <span class="pv">Arial, sans-serif</span>;
+      <span class="p">margin</span>: <span class="pv">0</span>;
+      <span class="p">background</span>: <span class="pv">pink</span>;
+    }
+    <span class="p">header</span> { <span class="p">background</span>: <span class="pv">#222</span>; <span class="p">color</span>: <span class="pv">white</span>; <span class="p">padding</span>: <span class="pv">15px</span>; }
+    <span class="p">nav</span> { <span class="p">display</span>: <span class="pv">flex</span>; <span class="p">justify-content</span>: <span class="pv">space-between</span>; <span class="p">align-items</span>: <span class="pv">center</span>; }
+    <span class="p">nav ul</span> { <span class="p">list-style</span>: <span class="pv">none</span>; <span class="p">display</span>: <span class="pv">flex</span>; <span class="p">gap</span>: <span class="pv">20px</span>; }
+    <span class="p">nav a</span> { <span class="p">color</span>: <span class="pv">white</span>; <span class="p">text-decoration</span>: <span class="pv">none</span>; }
+    <span class="p">.hero</span> {
+      <span class="p">height</span>: <span class="pv">90vh</span>; <span class="p">display</span>: <span class="pv">flex</span>;
+      <span class="p">justify-content</span>: <span class="pv">center</span>; <span class="p">align-items</span>: <span class="pv">center</span>;
+      <span class="p">text-align</span>: <span class="pv">center</span>; <span class="p">background</span>: <span class="pv">#333</span>; <span class="p">color</span>: <span class="pv">white</span>;
+    }
+    <span class="p">section</span> { <span class="p">padding</span>: <span class="pv">60px 20px</span>; <span class="p">max-width</span>: <span class="pv">1000px</span>; <span class="p">margin</span>: <span class="pv">auto</span>; }
+    <span class="p">.projects</span> {
+      <span class="p">display</span>: <span class="pv">grid</span>;
+      <span class="p">grid-template-columns</span>: <span class="pv">repeat(auto-fit, minmax(250px, 1fr))</span>;
+      <span class="p">gap</span>: <span class="pv">20px</span>;
+    }
+    <span class="p">article</span> { <span class="p">background</span>: <span class="pv">white</span>; <span class="p">padding</span>: <span class="pv">20px</span>; <span class="p">border-radius</span>: <span class="pv">10px</span>; }
+    <span class="p">form</span> { <span class="p">display</span>: <span class="pv">flex</span>; <span class="p">flex-direction</span>: <span class="pv">column</span>; <span class="p">gap</span>: <span class="pv">10px</span>; }
+    <span class="p">input, textarea</span> { <span class="p">padding</span>: <span class="pv">10px</span>; }
+    <span class="p">button</span> { <span class="p">padding</span>: <span class="pv">10px</span>; <span class="p">background</span>: <span class="pv">#222</span>; <span class="p">color</span>: <span class="pv">white</span>; <span class="p">border</span>: <span class="pv">none</span>; }
+    <span class="p">footer</span> { <span class="p">text-align</span>: <span class="pv">center</span>; <span class="p">padding</span>: <span class="pv">20px</span>; <span class="p">background</span>: <span class="pv">#222</span>; <span class="p">color</span>: <span class="pv">white</span>; }
+  <span class="t">&lt;/style&gt;</span>
+<span class="t">&lt;/head&gt;</span>
+
+<span class="t">&lt;body&gt;</span>
+  <span class="t">&lt;header&gt;</span>
+    <span class="t">&lt;nav&gt;</span>
+      <span class="t">&lt;h2&gt;</span>MyPortfolio<span class="t">&lt;/h2&gt;</span>
+      <span class="t">&lt;ul&gt;</span>
+        <span class="t">&lt;li&gt;&lt;a</span> <span class="a">href</span>=<span class="v">"#home"</span><span class="t">&gt;</span>Home<span class="t">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="t">&lt;li&gt;&lt;a</span> <span class="a">href</span>=<span class="v">"#about"</span><span class="t">&gt;</span>About<span class="t">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="t">&lt;li&gt;&lt;a</span> <span class="a">href</span>=<span class="v">"#projects"</span><span class="t">&gt;</span>Projects<span class="t">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="t">&lt;li&gt;&lt;a</span> <span class="a">href</span>=<span class="v">"#contact"</span><span class="t">&gt;</span>Contact<span class="t">&lt;/a&gt;&lt;/li&gt;</span>
+      <span class="t">&lt;/ul&gt;</span>
+    <span class="t">&lt;/nav&gt;</span>
+  <span class="t">&lt;/header&gt;</span>
+
+  <span class="t">&lt;main&gt;</span>
+    <span class="t">&lt;section</span> <span class="a">id</span>=<span class="v">"home"</span> <span class="a">class</span>=<span class="v">"hero"</span><span class="t">&gt;</span>
+      <span class="t">&lt;div&gt;</span>
+        <span class="t">&lt;h1&gt;</span>Hello, I'm Shailyn Niedo<span class="t">&lt;/h1&gt;</span>
+        <span class="t">&lt;p&gt;</span>Aspiring Animator<span class="t">&lt;/p&gt;</span>
+      <span class="t">&lt;/div&gt;</span>
+    <span class="t">&lt;/section&gt;</span>
+
+    <span class="t">&lt;section</span> <span class="a">id</span>=<span class="v">"about"</span><span class="t">&gt;</span>
+      <span class="t">&lt;h2&gt;</span>About Me<span class="t">&lt;/h2&gt;</span>
+      <span class="t">&lt;p&gt;</span>I am a student learning animation. I am passionate about bringing
+      characters to life and creating engaging visual stories. I have experience
+      with various animation software and techniques, and I am always eager to
+      learn more and improve my skills.<span class="t">&lt;/p&gt;</span>
+    <span class="t">&lt;/section&gt;</span>
+
+    <span class="t">&lt;section</span> <span class="a">id</span>=<span class="v">"projects"</span><span class="t">&gt;</span>
+      <span class="t">&lt;h2&gt;</span>My Projects<span class="t">&lt;/h2&gt;</span>
+      <span class="t">&lt;div</span> <span class="a">class</span>=<span class="v">"projects"</span><span class="t">&gt;</span>
+        <span class="t">&lt;article&gt;&lt;h3&gt;</span>3D Animation Project<span class="t">&lt;/h3&gt;&lt;p&gt;</span>A short 3D animation.<span class="t">&lt;/p&gt;&lt;/article&gt;</span>
+        <span class="t">&lt;article&gt;&lt;h3&gt;</span>Car 3D Model<span class="t">&lt;/h3&gt;&lt;p&gt;</span>A 3D model of a car using Blender.<span class="t">&lt;/p&gt;&lt;/article&gt;</span>
+        <span class="t">&lt;article&gt;&lt;h3&gt;</span>Graphic Design Project<span class="t">&lt;/h3&gt;&lt;p&gt;</span>A collection of graphic designs.<span class="t">&lt;/p&gt;&lt;/article&gt;</span>
+      <span class="t">&lt;/div&gt;</span>
+    <span class="t">&lt;/section&gt;</span>
+
+    <span class="t">&lt;section</span> <span class="a">id</span>=<span class="v">"contact"</span><span class="t">&gt;</span>
+      <span class="t">&lt;h2&gt;</span>Contact Me<span class="t">&lt;/h2&gt;</span>
+      <span class="t">&lt;form&gt;</span>
+        <span class="t">&lt;input</span> <span class="a">type</span>=<span class="v">"text"</span> <span class="a">placeholder</span>=<span class="v">"Your Name"</span> <span class="a">required</span> <span class="t">/&gt;</span>
+        <span class="t">&lt;input</span> <span class="a">type</span>=<span class="v">"email"</span> <span class="a">placeholder</span>=<span class="v">"Your Email"</span> <span class="a">required</span> <span class="t">/&gt;</span>
+        <span class="t">&lt;textarea</span> <span class="a">placeholder</span>=<span class="v">"Your Message"</span><span class="t">&gt;&lt;/textarea&gt;</span>
+        <span class="t">&lt;button</span> <span class="a">type</span>=<span class="v">"submit"</span><span class="t">&gt;</span>Send Message<span class="t">&lt;/button&gt;</span>
+      <span class="t">&lt;/form&gt;</span>
+    <span class="t">&lt;/section&gt;</span>
+  <span class="t">&lt;/main&gt;</span>
+
+  <span class="t">&lt;footer&gt;</span>
+    <span class="t">&lt;p&gt;</span>© 2026 Shailyn Niedo Portfolio<span class="t">&lt;/p&gt;</span>
+  <span class="t">&lt;/footer&gt;</span>
+<span class="t">&lt;/body&gt;</span>
+<span class="t">&lt;/html&gt;</span></pre></div>
+    </div>
+
+  </div>
+</div>
 
       <!-- ── ACT 6 ── -->
-      <div class="activity-item" id="act6">
-        <div class="activity-header" onclick="toggleAct('act6')">
-          <div class="activity-header-left">
-            <span class="act-number">// ACT — 006</span>
-            <span class="act-title">Activity 6</span>
-            <span class="act-tag act-tag--soon">Coming Soon</span>
-          </div>
-          <span class="act-toggle">+</span>
-        </div>
-        <div class="activity-body">
-          <div class="blank-body">⏳ &nbsp; Activity not yet submitted</div>
-        </div>
+<div class="activity-item" id="act6">
+  <div class="activity-header" onclick="toggleAct('act6')">
+    <div class="activity-header-left">
+      <span class="act-number">// ACT — 006</span>
+      <span class="act-title">Tiptop Portraiture Studio Reservation</span>
+      <span class="act-tag">HTML + CSS + JS</span>
+    </div>
+    <span class="act-toggle">+</span>
+  </div>
+  <div class="activity-body">
+    <p class="activity-desc">
+      A studio reservation form that captures client details and portrait service type,
+      then dynamically displays the submitted information using JavaScript DOM manipulation.
+    </p>
+
+    <div class="tab-bar">
+      <button class="tab active" onclick="showTab(event,'act6','preview')">▶ Live Preview</button>
+      <button class="tab" onclick="showTab(event,'act6','html')">⟨/⟩ index.html</button>
+      <button class="tab" onclick="showTab(event,'act6','css')">🎨 style.css</button>
+      <button class="tab" onclick="showTab(event,'act6','js')">⚡ script.js</button>
+    </div>
+
+    <!-- Preview -->
+    <div class="tab-panel active" data-act="act6" data-panel="preview">
+      <div class="browser-chrome">
+        <div class="browser-dots"><span></span><span></span><span></span></div>
+        <div class="browser-url">activity6/index.html</div>
+        <a class="browser-open" href="activity6/index.html" target="_blank">↗ Open</a>
       </div>
+      <iframe class="live-frame" src="activity6/index.html"></iframe>
+    </div>
+
+    <!-- index.html -->
+    <div class="tab-panel" data-act="act6" data-panel="html">
+      <div class="code-file-label">📄 activity6 / index.html</div>
+      <div class="code-block"><pre><span class="t">&lt;!DOCTYPE html&gt;</span>
+<span class="t">&lt;html</span> <span class="a">lang</span>=<span class="v">"en"</span><span class="t">&gt;</span>
+<span class="t">&lt;head&gt;</span>
+  <span class="t">&lt;meta</span> <span class="a">charset</span>=<span class="v">"UTF-8"</span><span class="t">&gt;</span>
+  <span class="t">&lt;meta</span> <span class="a">name</span>=<span class="v">"viewport"</span> <span class="a">content</span>=<span class="v">"width=device-width, initial-scale=1.0"</span><span class="t">&gt;</span>
+  <span class="t">&lt;link</span> <span class="a">rel</span>=<span class="v">"stylesheet"</span> <span class="a">href</span>=<span class="v">"style.css"</span><span class="t">&gt;</span>
+  <span class="t">&lt;script</span> <span class="a">src</span>=<span class="v">"script.js"</span> <span class="a">defer</span><span class="t">&gt;&lt;/script&gt;</span>
+  <span class="t">&lt;title&gt;</span>Tiptop Portraiture Studio Reservation<span class="t">&lt;/title&gt;</span>
+<span class="t">&lt;/head&gt;</span>
+<span class="t">&lt;body&gt;</span>
+  <span class="t">&lt;main</span> <span class="a">class</span>=<span class="v">"container"</span><span class="t">&gt;</span>
+
+    <span class="t">&lt;section</span> <span class="a">class</span>=<span class="v">"formCard"</span><span class="t">&gt;</span>
+      <span class="t">&lt;form&gt;</span>
+        <span class="t">&lt;h2&gt;</span>Tiptop Portraiture Studio Reservation<span class="t">&lt;/h2&gt;</span>
+
+        <span class="t">&lt;figure</span> <span class="a">class</span>=<span class="v">"formGroup"</span><span class="t">&gt;</span>
+          <span class="t">&lt;label&gt;</span>Full Name:<span class="t">&lt;/label&gt;</span>
+          <span class="t">&lt;input</span> <span class="a">type</span>=<span class="v">"text"</span> <span class="a">id</span>=<span class="v">"name"</span> <span class="a">placeholder</span>=<span class="v">"Enter your full name"</span><span class="t">&gt;</span>
+        <span class="t">&lt;/figure&gt;</span>
+
+        <span class="t">&lt;figure</span> <span class="a">class</span>=<span class="v">"formGroup"</span><span class="t">&gt;</span>
+          <span class="t">&lt;label&gt;</span>Email Address:<span class="t">&lt;/label&gt;</span>
+          <span class="t">&lt;input</span> <span class="a">type</span>=<span class="v">"email"</span> <span class="a">id</span>=<span class="v">"email"</span> <span class="a">placeholder</span>=<span class="v">"Enter your email"</span><span class="t">&gt;</span>
+        <span class="t">&lt;/figure&gt;</span>
+
+        <span class="t">&lt;figure</span> <span class="a">class</span>=<span class="v">"formGroup"</span><span class="t">&gt;</span>
+          <span class="t">&lt;label&gt;</span>Contact Number:<span class="t">&lt;/label&gt;</span>
+          <span class="t">&lt;input</span> <span class="a">type</span>=<span class="v">"tel"</span> <span class="a">id</span>=<span class="v">"contact"</span> <span class="a">placeholder</span>=<span class="v">"Enter your contact number"</span><span class="t">&gt;</span>
+        <span class="t">&lt;/figure&gt;</span>
+
+        <span class="t">&lt;figure</span> <span class="a">class</span>=<span class="v">"formGroup"</span><span class="t">&gt;</span>
+          <span class="t">&lt;label&gt;</span>Reservation Date:<span class="t">&lt;/label&gt;</span>
+          <span class="t">&lt;input</span> <span class="a">type</span>=<span class="v">"date"</span> <span class="a">id</span>=<span class="v">"date"</span><span class="t">&gt;</span>
+        <span class="t">&lt;/figure&gt;</span>
+
+        <span class="t">&lt;figure</span> <span class="a">class</span>=<span class="v">"formGroup"</span><span class="t">&gt;</span>
+          <span class="t">&lt;label&gt;</span>Portrait Service Type:<span class="t">&lt;/label&gt;</span>
+          <span class="t">&lt;select</span> <span class="a">id</span>=<span class="v">"service"</span><span class="t">&gt;</span>
+            <span class="t">&lt;option</span> <span class="a">value</span>=<span class="v">""</span><span class="t">&gt;</span>Select a portrait service<span class="t">&lt;/option&gt;</span>
+            <span class="t">&lt;option</span> <span class="a">value</span>=<span class="v">"Graduation Portrait"</span><span class="t">&gt;</span>Graduation Portrait<span class="t">&lt;/option&gt;</span>
+            <span class="t">&lt;option</span> <span class="a">value</span>=<span class="v">"Family Portrait"</span><span class="t">&gt;</span>Family Portrait<span class="t">&lt;/option&gt;</span>
+            <span class="t">&lt;option</span> <span class="a">value</span>=<span class="v">"Solo Portrait"</span><span class="t">&gt;</span>Solo Portrait<span class="t">&lt;/option&gt;</span>
+            <span class="t">&lt;option</span> <span class="a">value</span>=<span class="v">"Couple Portrait"</span><span class="t">&gt;</span>Couple Portrait<span class="t">&lt;/option&gt;</span>
+            <span class="t">&lt;option</span> <span class="a">value</span>=<span class="v">"Corporate Portrait"</span><span class="t">&gt;</span>Corporate Portrait<span class="t">&lt;/option&gt;</span>
+            <span class="t">&lt;option</span> <span class="a">value</span>=<span class="v">"Creative Portrait"</span><span class="t">&gt;</span>Creative Portrait<span class="t">&lt;/option&gt;</span>
+          <span class="t">&lt;/select&gt;</span>
+        <span class="t">&lt;/figure&gt;</span>
+
+        <span class="t">&lt;figure</span> <span class="a">class</span>=<span class="v">"formGroup"</span><span class="t">&gt;</span>
+          <span class="t">&lt;label&gt;</span>Additional Notes:<span class="t">&lt;/label&gt;</span>
+          <span class="t">&lt;textarea</span> <span class="a">rows</span>=<span class="v">"2"</span> <span class="a">id</span>=<span class="v">"notes"</span> <span class="a">placeholder</span>=<span class="v">"Any special request"</span><span class="t">&gt;&lt;/textarea&gt;</span>
+        <span class="t">&lt;/figure&gt;</span>
+
+        <span class="t">&lt;button</span> <span class="a">type</span>=<span class="v">"submit"</span> <span class="a">class</span>=<span class="v">"btn"</span><span class="t">&gt;</span>Reserve<span class="t">&lt;/button&gt;</span>
+      <span class="t">&lt;/form&gt;</span>
+    <span class="t">&lt;/section&gt;</span>
+
+    <span class="t">&lt;section</span> <span class="a">class</span>=<span class="v">"dataContent"</span><span class="t">&gt;&lt;/section&gt;</span>
+
+  <span class="t">&lt;/main&gt;</span>
+<span class="t">&lt;/body&gt;</span>
+<span class="t">&lt;/html&gt;</span></pre></div>
+    </div>
+
+    <!-- style.css -->
+    <div class="tab-panel" data-act="act6" data-panel="css">
+      <div class="code-file-label">🎨 activity6 / style.css</div>
+      <div class="code-block"><pre><span class="p">html, body</span> {
+  <span class="p">width</span>: <span class="pv">100%</span>;
+  <span class="p">height</span>: <span class="pv">100%</span>;
+  <span class="p">font-family</span>: <span class="pv">Arial, Helvetica, sans-serif</span>;
+}
+
+<span class="p">*</span> {
+  <span class="p">padding</span>: <span class="pv">0</span>;
+  <span class="p">margin</span>: <span class="pv">0</span>;
+  <span class="p">box-sizing</span>: <span class="pv">border-box</span>;
+}
+
+<span class="p">.container</span> {
+  <span class="p">background</span>: <span class="pv">linear-gradient(135deg, #ffb3b3, #ffd6d6)</span>;
+  <span class="p">width</span>: <span class="pv">100%</span>;
+  <span class="p">height</span>: <span class="pv">100%</span>;
+  <span class="p">padding</span>: <span class="pv">30px</span>;
+  <span class="p">display</span>: <span class="pv">grid</span>;
+  <span class="p">grid-template-columns</span>: <span class="pv">repeat(9, 1fr)</span>;
+  <span class="p">gap</span>: <span class="pv">20px</span>;
+}
+
+<span class="p">.formCard</span> {
+  <span class="p">border</span>: <span class="pv">1px solid #e89a9a</span>;
+  <span class="p">background-color</span>: <span class="pv">#ffe5e5</span>;
+  <span class="p">padding</span>: <span class="pv">40px</span>;
+  <span class="p">grid-column</span>: <span class="pv">span 6</span>;
+  <span class="p">border-radius</span>: <span class="pv">8px</span>;
+  <span class="p">box-shadow</span>: <span class="pv">0 5px 10px rgba(0,0,0,0.2)</span>;
+}
+
+<span class="p">.dataContent</span> {
+  <span class="p">border</span>: <span class="pv">1px solid #e89a9a</span>;
+  <span class="p">padding</span>: <span class="pv">20px</span>;
+  <span class="p">grid-column</span>: <span class="pv">span 3</span>;
+  <span class="p">background</span>: <span class="pv">linear-gradient(to bottom, #fff0f0, #ffc9c9)</span>;
+  <span class="p">border-radius</span>: <span class="pv">8px</span>;
+  <span class="p">text-align</span>: <span class="pv">left</span>;
+  <span class="p">box-shadow</span>: <span class="pv">0 5px 10px rgba(0,0,0,0.2)</span>;
+}
+
+<span class="p">form</span> {
+  <span class="p">display</span>: <span class="pv">flex</span>;
+  <span class="p">flex-direction</span>: <span class="pv">column</span>;
+  <span class="p">row-gap</span>: <span class="pv">5px</span>;
+}
+
+<span class="p">.formGroup</span> {
+  <span class="p">display</span>: <span class="pv">flex</span>;
+  <span class="p">flex-direction</span>: <span class="pv">column</span>;
+  <span class="p">row-gap</span>: <span class="pv">5px</span>;
+}
+
+<span class="p">.formGroup label</span> {
+  <span class="p">color</span>: <span class="pv">#7a2e2e</span>;
+  <span class="p">font-weight</span>: <span class="pv">bold</span>;
+}
+
+<span class="p">.formGroup input,
+.formGroup textarea</span> {
+  <span class="p">border</span>: <span class="pv">1px solid #f2a7a7</span>;
+  <span class="p">border-radius</span>: <span class="pv">5px</span>;
+  <span class="p">padding</span>: <span class="pv">7px</span>;
+  <span class="p">margin-top</span>: <span class="pv">3px</span>;
+  <span class="p">transition</span>: <span class="pv">0.2s</span>;
+  <span class="p">background-color</span>: <span class="pv">#fffafa</span>;
+}
+
+<span class="p">.formGroup input[type="date"]</span> {
+  <span class="p">border</span>: <span class="pv">1px solid #f2a7a7</span>;
+  <span class="p">border-radius</span>: <span class="pv">5px</span>;
+  <span class="p">padding</span>: <span class="pv">7px</span>;
+  <span class="p">margin-top</span>: <span class="pv">3px</span>;
+  <span class="p">background-color</span>: <span class="pv">#fff5f5</span>;
+  <span class="p">cursor</span>: <span class="pv">pointer</span>;
+}
+
+<span class="p">.formGroup input[type="date"]:hover</span> {
+  <span class="p">border-color</span>: <span class="pv">#ff8a8a</span>;
+}
+
+<span class="p">.formGroup input[type="date"]:focus</span> {
+  <span class="p">outline</span>: <span class="pv">none</span>;
+  <span class="p">border-color</span>: <span class="pv">#ff8a8a</span>;
+  <span class="p">box-shadow</span>: <span class="pv">0 0 5px #ffb3b3</span>;
+}
+
+<span class="p">.btn</span> {
+  <span class="p">border</span>: <span class="pv">none</span>;
+  <span class="p">border-radius</span>: <span class="pv">5px</span>;
+  <span class="p">padding</span>: <span class="pv">10px</span>;
+  <span class="p">margin-top</span>: <span class="pv">8px</span>;
+  <span class="p">cursor</span>: <span class="pv">pointer</span>;
+  <span class="p">background-color</span>: <span class="pv">#ffb3b3</span>;
+  <span class="p">font-weight</span>: <span class="pv">bold</span>;
+  <span class="p">transition</span>: <span class="pv">0.3s</span>;
+}
+
+<span class="p">.btn:hover</span> {
+  <span class="p">background-color</span>: <span class="pv">#ff8a8a</span>;
+  <span class="p">color</span>: <span class="pv">white</span>;
+  <span class="p">transform</span>: <span class="pv">scale(1.05)</span>;
+}
+
+<span class="p">.titleContent</span> {
+  <span class="p">margin-bottom</span>: <span class="pv">10px</span>;
+  <span class="p">color</span>: <span class="pv">#7a1f1f</span>;
+  <span class="p">font-weight</span>: <span class="pv">bold</span>;
+  <span class="p">font-size</span>: <span class="pv">22px</span>;
+}
+
+<span class="p">.formGroup select</span> {
+  <span class="p">border</span>: <span class="pv">1px solid #f2a7a7</span>;
+  <span class="p">border-radius</span>: <span class="pv">5px</span>;
+  <span class="p">padding</span>: <span class="pv">7px</span>;
+  <span class="p">margin-top</span>: <span class="pv">3px</span>;
+}</pre></div>
+    </div>
+
+    <!-- script.js -->
+    <div class="tab-panel" data-act="act6" data-panel="js">
+      <div class="code-file-label">⚡ activity6 / script.js</div>
+      <div class="code-block"><pre><span class="p">document</span>.addEventListener(<span class="v">"DOMContentLoaded"</span>, function() {
+  console.log(<span class="v">"JavaScript Loaded!"</span>);
+
+  const formSubmit  = document.querySelector(<span class="v">"form"</span>);
+  const dataContent = document.querySelector(<span class="v">".dataContent"</span>);
+
+  const name    = document.getElementById(<span class="v">"name"</span>);
+  const email   = document.getElementById(<span class="v">"email"</span>);
+  const contact = document.getElementById(<span class="v">"contact"</span>);
+  const date    = document.getElementById(<span class="v">"date"</span>);
+  const service = document.getElementById(<span class="v">"service"</span>);
+  const notes   = document.getElementById(<span class="v">"notes"</span>);
+
+  formSubmit.addEventListener(<span class="v">"submit"</span>, function(event) {
+    event.preventDefault();
+
+    dataContent.innerHTML = `
+      &lt;h1 class="titleContent"&gt;Tiptop Portraiture Studio&lt;/h1&gt;
+      &lt;p&gt;&lt;b&gt;Client Name:&lt;/b&gt; ${name.value}&lt;/p&gt;
+      &lt;p&gt;&lt;b&gt;Email:&lt;/b&gt; ${email.value}&lt;/p&gt;
+      &lt;p&gt;&lt;b&gt;Contact Number:&lt;/b&gt; ${contact.value}&lt;/p&gt;
+      &lt;p&gt;&lt;b&gt;Reservation Date:&lt;/b&gt; ${date.value}&lt;/p&gt;
+      &lt;p&gt;&lt;b&gt;Portrait Service:&lt;/b&gt; ${service.value}&lt;/p&gt;
+      &lt;p&gt;&lt;b&gt;Notes:&lt;/b&gt; ${notes.value}&lt;/p&gt;
+    `;
+
+    name.value    = <span class="v">""</span>;
+    email.value   = <span class="v">""</span>;
+    contact.value = <span class="v">""</span>;
+    date.value    = <span class="v">""</span>;
+    service.value = <span class="v">""</span>;
+    notes.value   = <span class="v">""</span>;
+  });
+
+});</pre></div>
+    </div>
+
+  </div>
+</div>
 
     </div>
   </section>
@@ -479,7 +842,7 @@
       </p>
       <div class="stat-grid">
         <div class="stat-item">
-          <div class="stat-number">04</div>
+          <div class="stat-number">06</div>
           <div class="stat-label">Activities Completed</div>
         </div>
         <div class="stat-item">

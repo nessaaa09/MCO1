@@ -1,17 +1,182 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Activity 5 — Coming Soon</title>
-</head>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background: pink;
+      }
 
-<body>
+      /* Header */
+      header {
+        background: #222;
+        color: white;
+        padding: 15px;
+      }
 
-  <h1>Activity 5</h1>
-  <p>This activity has not been submitted yet.</p>
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
 
-</body>
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+      }
 
+      nav a {
+        color: white;
+        text-decoration: none;
+      }
+
+      /* Landing */
+      .hero {
+        height: 90vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background: #333;
+        color: white;
+      }
+
+      /* Sections */
+      section {
+        padding: 60px 20px;
+        max-width: 1000px;
+        margin: auto;
+      }
+
+      /* Projects */
+      .projects {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+      }
+
+      article {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+      }
+
+      /* Contact */
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      input,
+      textarea {
+        padding: 10px;
+      }
+
+      button {
+        padding: 10px;
+        background: #222;
+        color: white;
+        border: none;
+      }
+
+      /* Footer */
+      footer {
+        text-align: center;
+        padding: 20px;
+        background: #222;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <h2>MyPortfolio</h2>
+
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Landing Page -->
+      <section id="home" class="hero">
+        <div>
+          <h1>Hello, I'm Shailyn Niedo</h1>
+          <p>Aspiring Animator</p>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about">
+        <h2>About Me</h2>
+
+        <p>
+          I am a student learning animation. I am passionate about bringing
+          characters to life and creating engaging visual stories. I have
+          experience with various animation software and techniques, and I am
+          always eager to learn more and improve my skills. In addition to
+          animation, I have also worked on programming projects, including a
+          Java calculator and a concept for a game credits system. I am excited
+          to continue growing as an animator and programmer in the future.
+        </p>
+      </section>
+
+      <!-- Projects Section -->
+      <section id="projects">
+        <h2>My Projects</h2>
+
+        <div class="projects">
+          <article>
+            <h3>3D Animation Project</h3>
+            <p>
+              A short 3D animation showcasing character movement and
+              storytelling.
+            </p>
+          </article>
+
+          <article>
+            <h3>Car 3D Model</h3>
+            <p>A 3D model of a car created using blender software.</p>
+          </article>
+
+          <article>
+            <h3>Graphic Design Project</h3>
+            <p>A collection of graphic designs created for various purposes.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact">
+        <h2>Contact Me</h2>
+
+        <form>
+          <input type="text" placeholder="Your Name" required />
+
+          <input type="email" placeholder="Your Email" required />
+
+          <textarea placeholder="Your Message"></textarea>
+
+          <button type="submit">Send Message</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2026 Shailyn Niedo Portfolio</p>
+    </footer>
+  </body>
 </html>
